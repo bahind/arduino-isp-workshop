@@ -4,7 +4,6 @@
  * Bjoern-Anders Hind, October 2019
  */
 
-#include Arduino
 #include <avr/sleep.h>  // This AVR library contains the methods that control the sleep modes
 
 #define interruptPin 2  // Pin we will use to wake up the microcontroller (ATtiny: Pin 2  /  Arduino: Pin 2)
