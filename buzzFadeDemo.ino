@@ -35,7 +35,7 @@ void loop() {
 // Puts the controller to sleep
 void goToSleep(){
   sleep_enable();                       // Enabling sleep mode
-  attachInterrupt(0, wakeUp, LOW);      // Attaching an interrupt to the pin
+  attachInterrupt(digitalPinToInterrupt(interruptPin), wakeUp, LOW);      // Attaching an interrupt to the pin
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);  // Setting the sleep mode
   sleep_cpu();                          // Activating sleep mode. Sleeps until interrupted
 }
@@ -43,7 +43,7 @@ void goToSleep(){
 // Wakes up the controller whenever interrupted
 void wakeUp() {
   sleep_disable();    // Disable sleep mode
-  detachInterrupt(0); // Removes the interrupt
+  detachInterrupt(digitalPinToInterrupt(interruptPin)); // Removes the interrupt
 }
 
 // Run fade() n times
